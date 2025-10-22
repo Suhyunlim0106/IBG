@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Interactive Brand Guide System</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        background: #231F20;
+        text-align: center;
+        height: 100%;
+      }
+
+      #unity-canvas {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3840 / 1080;
+        background: #231F20;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <script src="Build/2.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/2.data",
+        frameworkUrl: "Build/2.framework.js",
+        codeUrl: "Build/2.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Interactive Brand Guide System",
+        productVersion: "1.0"
+      });
+    </script>
+  </body>
+</html>
